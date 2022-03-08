@@ -1,17 +1,18 @@
 import NavItems from './NavItems'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faCross, faXmark } from '@fortawesome/free-solid-svg-icons'
 
-export default function Header(){
+export default function Header({isOpenMenuModal, setIsOpenMenuModal}){
     return(
-        <header className=" w-[93%] h-[70px] fixed top-0 flex items-center drop-shadow-2xl">
+        <header className="w-[93%] h-[70px] fixed top-0 flex items-center drop-shadow-2xl z-[51]">
+            
 
-            <div id="headerTitle" className="text-white text-sm lg:text-xl font-medium flex items-baseline w-[10%] group">
+            <div id="headerTitle" className="text-white text-base md:text-lg lg:text-xl font-medium flex items-baseline xl:w-[10%] group">
                 <h1 className="tracking-wide lg:group-hover:text-2xl">Krausch</h1>
-                <div className="bg-lightPurple h-1.5 w-1.5 md:ml-1 lg:ml-0.5 rounded-full"></div>
+                <div className="bg-lightPurple h-1.5 w-1.5 ml-1 lg:ml-0.5 rounded-full"></div>
             </div>
 
-            <nav className="lg:flex text-white w-[90%] justify-end items-baseline hidden">
+            <nav className="lg:flex text-white lg:w-[90%] justify-end items-baseline hidden">
                 <NavItems />
 
                 <button className="text-base text-lightPurple border-[0.5px] border-lightPurple rounded p-2 px-4 
@@ -20,8 +21,12 @@ export default function Header(){
                 </button>
             </nav>
 
-            <nav className='lg:hidden flex absolute right-2'>
-                <FontAwesomeIcon icon={faBars} className="text-white" />
+            <nav className='lg:hidden flex absolute right-6'>
+                {!isOpenMenuModal ? 
+                    <FontAwesomeIcon icon={faBars} className="text-white" onClick={() => {setIsOpenMenuModal(true)}} />    
+                : 
+                    <FontAwesomeIcon icon={faXmark} className="text-white text-3xl" onClick={() => {setIsOpenMenuModal(false)}} />
+                }
             </nav>
 
         </header>
