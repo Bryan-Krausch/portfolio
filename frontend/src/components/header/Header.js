@@ -4,7 +4,7 @@ import { faBars, faCross, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 export default function Header({isOpenMenuModal, setIsOpenMenuModal}){
     return(
-        <header className="w-[93%] h-[70px] fixed top-0 flex items-center drop-shadow-2xl z-[51]">
+        <header className="w-[93%] h-[70px] fixed top-0 flex items-center justify-between drop-shadow-2xl z-[51]">
             
 
             <div id="headerTitle" className="text-white text-base md:text-lg lg:text-xl font-medium flex items-baseline xl:w-[10%] group">
@@ -21,11 +21,9 @@ export default function Header({isOpenMenuModal, setIsOpenMenuModal}){
                 </button>
             </nav>
 
-            <nav className='lg:hidden flex absolute right-6'>
-                {!isOpenMenuModal ? 
-                    <FontAwesomeIcon icon={faBars} className="text-white" onClick={() => {setIsOpenMenuModal(true)}} />    
-                : 
-                    <FontAwesomeIcon icon={faXmark} className="text-white text-3xl" onClick={() => {setIsOpenMenuModal(false)}} />
+            <nav className='lg:hidden pr-4'>
+                {!isOpenMenuModal && 
+                    <FontAwesomeIcon icon={faBars} className="text-white" onClick={() => {setIsOpenMenuModal(true)}} />
                 }
             </nav>
 
