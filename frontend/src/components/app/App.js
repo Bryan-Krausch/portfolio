@@ -31,12 +31,15 @@ function App() {
   setTimeout(() => {
     setTransition('transition-opacity duration-[1s] opacity-0')
   }, 1300)
+  setTimeout(() => {
+    setTransition('transition-[display] duration-[0.1s] hidden')
+  }, 1500)
 
 
   return (
     <div className="App w-[full] overflow-x-hidden bg-darkPurple">
 
-      <div id='transition' className={transition}>
+      <div id='transition' className={`${transition}`}>
         <div className={`bg-purple-500 transition-all ${startTransition1} ease-in-out duration-300`} style={styleTransition}></div>
         <div className={`bg-darkPurple transition-all ${startTransition2} ease-in-out  duration-300`} style={styleTransition}></div>
         <div className={`bg-black transition-all ${startTransition3} ease-in-out duration-300`} style={styleTransition}></div>
