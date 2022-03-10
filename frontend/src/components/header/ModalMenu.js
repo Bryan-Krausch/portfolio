@@ -1,16 +1,17 @@
 import { faCode, faFile, faHouse, faUser, faXmark} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import './menu.css'
 
-export default function ModalMenu(isOpenMenuModal, setIsOpenMenuModal) {
-    console.log(isOpenMenuModal);
+export default function ModalMenu({isOpenMenuModal, setIsOpenMenuModal}) {
+    const stateMenu = isOpenMenuModal ? 'openMenu' : 'closedMenu'
 
     return(
-        <div className="z-[49] absolute w-[64%] md:w-[50%] h-screen right-0 lg:hidden bg-mediumPurple drop-shadow-2xl shadow-2xl 
-        shadow-black flex justify-center items-center animate-openMenu  ">
+        <div className={`z-[49] w-[64%] md:w-[50%] h-screen right-0 lg:hidden bg-mediumPurple drop-shadow-2xl shadow-2xl 
+        shadow-black flex fixed justify-center items-center overflow-y-hidden ${stateMenu} z-[200]`}>
             
-            <div className='lg:hidden absolute right-8 top-6 text-red-500'>
+            <div className='lg:hidden absolute right-8 top-6 text-red-500 cursor-pointer z-[200]'>
                 {isOpenMenuModal &&  
-                    <button onClick={() => {alert('oui')}} >
+                    <button onClick={() => {setIsOpenMenuModal(false)}} className="relative cursor-pointer">
                         <FontAwesomeIcon icon={faXmark} className="text-white text-xl relative cursor-pointer" />
                     </button>
                 }

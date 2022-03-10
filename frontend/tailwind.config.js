@@ -16,11 +16,16 @@ module.exports = {
         openMenu: {
           "0%": { transform: 'translateX(100vw)', visibility: 'hidden' },
           "100%": { transform: 'translateX(0vw)', visibility: 'visible' }
+        },
+        closeMenu: {
+          "0%": { transform: 'translateX(0vw)'},
+          "100%": { transform: 'translateX(100vw)', visibility: 'hidden' }
         }
       },
 
       animation: {
-        openMenu: 'openMenu 0.25s cubic-bezier(0.645,0.045,0.355,1)'
+        openMenu: 'openMenu 0.25s cubic-bezier(0.645,0.045,0.355,1)',
+        closeMenu: 'closeMenu 0.25s cubic-bezier(0.645,0.045,0.355,1)'
       }
 
     }

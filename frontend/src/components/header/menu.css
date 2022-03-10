@@ -1,0 +1,11 @@
+.openMenu{
+    transform: translateX(0vw);    
+    visibility: visible;
+    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+}
+
+.closedMenu{
+    transform: translateX(100vw);
+    visibility: hidden;
+    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);;
+}

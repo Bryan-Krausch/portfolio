@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App w-[full] overflow-x-hidden bg-darkPurple">
-      {isOpenMenuModal && <ModalMenu isOpenMenuModal={isOpenMenuModal} setIsOpenMenuModal={setIsOpenMenuModal} />}
+      <ModalMenu isOpenMenuModal={isOpenMenuModal} setIsOpenMenuModal={setIsOpenMenuModal} />
       {isOpenContactModal && <ModalContact />}
 
       <div className={`w-[93%] h-full mx-auto`}>  
