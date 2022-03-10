@@ -12,22 +12,21 @@ module.exports = {
         'ligthGreyText': '#ccd6f6',
         'slateGreyText': '#8892b0'
       },
-      keyframes: {
-        openMenu: {
-          "0%": { transform: 'translateX(100vw)', visibility: 'hidden' },
-          "100%": { transform: 'translateX(0vw)', visibility: 'visible' }
-        },
-        closeMenu: {
-          "0%": { transform: 'translateX(0vw)'},
-          "100%": { transform: 'translateX(100vw)', visibility: 'hidden' }
-        }
+      animation: {
+        transitionChangePage: 'transitionChangePage 0.3s ease-in-out forwards',
+        transitionChangePageLast: 'transitionChangePageLast 0.3s ease-in-out forwards',
       },
 
-      animation: {
-        openMenu: 'openMenu 0.25s cubic-bezier(0.645,0.045,0.355,1)',
-        closeMenu: 'closeMenu 0.25s cubic-bezier(0.645,0.045,0.355,1)'
-      }
+      keyframes: {
+        transitionChangePage: {
+          '0%': {left: '-100vw'},
+          '100%': {left: '0'}
+        },
+      },
 
+      transitionTimingFunction: {
+        allTiming: 'cubic-bezier(0.645,0.045,0.355,1)'
+      }
     }
   },
   plugins: [],

@@ -1,6 +1,8 @@
 export default function First(){
+
+
     return(
-        <div className="h-screen mx-auto flex items-center">
+        <section className="h-screen mx-auto flex items-center ">
             <div className="h-[63%] md:h-[45%] w-full 2xl:px-[130px] relative">
                 <div className="text-lightPurple text-base md:text-base font-thin tracking-widest mt-3 md:mt-0">Bonjour, je m'appelle,</div>
                 <div className="text-ligthGreyText text-[33px] sm:text-[40px] md:text-[44px] lg:text-[50px] font-semibold md:font-bold pt-2 md:pt-0 tracking-wide 2xl:text-[70px]">Krausch Bryan.</div>
@@ -16,6 +18,6 @@ export default function First(){
                 </div>
             </div>
 
-        </div>
+        </section>
     )
 }
