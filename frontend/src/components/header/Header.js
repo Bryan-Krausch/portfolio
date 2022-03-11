@@ -2,7 +2,7 @@ import NavItems from './NavItems'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faCross, faXmark } from '@fortawesome/free-solid-svg-icons'
 
-export default function Header({isOpenMenuModal, setIsOpenMenuModal, setDiapo}){
+export default function Header({isOpenMenuModal, setIsOpenMenuModal, setDiapo, setIsOpenContactModal}){
     const stateBars = isOpenMenuModal && "hidden"
 
     return(
@@ -16,7 +16,7 @@ export default function Header({isOpenMenuModal, setIsOpenMenuModal, setDiapo}){
                     <NavItems setDiapo={setDiapo}/>
 
                     <button className="text-base text-lightPurple border-[0.5px] border-lightPurple rounded p-2 px-4 
-                    hover:bg-lightPurple hover:bg-opacity-20 ">
+                    hover:bg-lightPurple hover:bg-opacity-20 " onClick={() => {setIsOpenContactModal(true)}}>
                         Me contacter
                     </button>
                 </nav>

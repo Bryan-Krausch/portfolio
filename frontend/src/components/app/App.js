@@ -8,9 +8,10 @@ import ModalContact from '../header/ModalContact';
 
 function App() {
   const [isLoad, setIsLoad] = useState(false)
+  const [blur, setBlur] = useState('')
 
   const [isOpenMenuModal, setIsOpenMenuModal] = useState(false)
-  const [isOpenContactModal, setIsOpenContactModal] = useState(false)
+  const [isOpenContactModal, setIsOpenContactModal] = useState(true)
 
   const [transition, setTransition] = useState('opacity-1')
   const [startTransition1, setStartTransition1] = useState('left-[-100vw]')
@@ -61,6 +62,14 @@ function App() {
     }
   }, [diapo])
 
+  useEffect(() => {
+    if(isOpenMenuModal === true || isOpenContactModal === true){
+      setBlur('blur')
+    }else{
+      setBlur('')
+    }
+  }, [isOpenMenuModal, isOpenContactModal])
+
   console.log(diapo);
 
   return (
@@ -80,8 +89,8 @@ function App() {
 
 
         
-        <div className={`w-[93%] h-full mx-auto`}>  
-          <Header isOpenMenuModal={isOpenMenuModal} setIsOpenMenuModal={setIsOpenMenuModal} setDiapo={setDiapo}/>
+        <div className={`w-[93%] h-full mx-auto ${blur}`}>  
+          <Header isOpenMenuModal={isOpenMenuModal} setIsOpenMenuModal={setIsOpenMenuModal} setDiapo={setDiapo} setIsOpenContactModal={setIsOpenContactModal}/>
 
           {/* Content */}
           <main className={`h-screen w-screenn xl:px-[200px] lg:px-[100px] md:px-[80px] sm:px-[60px] px-4 w-full mx-auto ${(isOpenMenuModal || isOpenContactModal ) && "blur-sm lg:blur-none"}`}>
