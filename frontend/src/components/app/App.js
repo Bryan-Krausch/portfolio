@@ -4,6 +4,7 @@ import Header from '../header/Header';
 import ModalMenu from '../header/ModalMenu';
 import React, { useState, useEffect } from 'react';
 import ModalContact from '../contact/ModalContact';
+import Timeline from '../timeline/Timeline';
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
   const [blur, setBlur] = useState('')
 
   const [isOpenMenuModal, setIsOpenMenuModal] = useState(false)
-  const [isOpenContactModal, setIsOpenContactModal] = useState(true)
+  const [isOpenContactModal, setIsOpenContactModal] = useState(false)
 
   const [transition, setTransition] = useState('opacity-1')
   const [startTransition1, setStartTransition1] = useState('left-[-100vw]')
@@ -76,12 +77,13 @@ function App() {
     <div className="App w-[full] overflow-x-hidden bg-darkPurple">
       {isLoad ? 
       <div>
-        {/* Transition */}
+        
+        {/* Transition
         <div id='transition' className={`${transition}`}>
           <div className={`bg-purple-800 transition-all ${startTransition1} ease-in-out duration-300`} style={styleTransition}></div>
           <div className={`bg-darkPurple transition-all ${startTransition2} ease-in-out  duration-300`} style={styleTransition}></div>
           <div className={`bg-black transition-all ${startTransition3} ease-in-out duration-300 opacity-50`} style={styleTransition}></div>
-        </div>
+        </div> */}
 
         {/* Modal Menu et Modal Contact */}
         <ModalMenu isOpenMenuModal={isOpenMenuModal} setIsOpenMenuModal={setIsOpenMenuModal} />
@@ -98,6 +100,7 @@ function App() {
             <div className={diapo === 2 ? 'block' : 'hidden'}><About /></div>
           </main>
 
+          <Timeline diapo={diapo}/>
         </div>
       </div>
 
