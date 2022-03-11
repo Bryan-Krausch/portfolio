@@ -3,7 +3,7 @@ import First from '../first/First'
 import Header from '../header/Header';
 import ModalMenu from '../header/ModalMenu';
 import React, { useState, useEffect } from 'react';
-import ModalContact from '../header/ModalContact';
+import ModalContact from '../contact/ModalContact';
 
 
 function App() {
@@ -85,7 +85,7 @@ function App() {
 
         {/* Modal Menu et Modal Contact */}
         <ModalMenu isOpenMenuModal={isOpenMenuModal} setIsOpenMenuModal={setIsOpenMenuModal} />
-        {isOpenContactModal && <ModalContact />}
+        {isOpenContactModal && <ModalContact setIsOpenContactModal={setIsOpenContactModal}/>}
 
 
         
