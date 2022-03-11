@@ -10,14 +10,7 @@ export default function First(){
                 <div className="text-slate-500 text-sm sm:text-base pt-8 lg:pt-0 md:text-lg font-thin tracking-wide md:w-[80%] 2xl:w-[50%] w-full md:leading-7 md:mt-4">
                     Je suis un développeur spécialisé dans le <strong className="text-lightPurple">développement web</strong>. Je suis actuellement dans mes études pendant encore 2 ans je suis donc ouvert à <strong className="text-lightPurple">aucune</strong> offre d'emploi pour le moment.  
                 </div>
-
-                <div className="pt-16">
-                    <button className="border-lightPurple border-2 hover:bg-lightPurple hover:bg-opacity-10 text-lightPurple px-16 py-2 lg:p-4 xl:px-20 xl:py-4 xl:text-lg xl:font-sans xl:tracking-widest rounded font-mono ">
-                        Voir la suite
-                    </button>
-                </div>
             </div>
-
         </section>
     )
 }

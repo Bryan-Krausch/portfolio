@@ -2,7 +2,7 @@ import NavItems from './NavItems'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faCross, faXmark } from '@fortawesome/free-solid-svg-icons'
 
-export default function Header({isOpenMenuModal, setIsOpenMenuModal}){
+export default function Header({isOpenMenuModal, setIsOpenMenuModal, setDiapo}){
     const stateBars = isOpenMenuModal && "hidden"
 
     return(
@@ -13,7 +13,7 @@ export default function Header({isOpenMenuModal, setIsOpenMenuModal}){
                 </div>
 
                 <nav className="lg:flex text-white lg:w-[90%] justify-end items-baseline hidden">
-                    <NavItems />
+                    <NavItems setDiapo={setDiapo}/>
 
                     <button className="text-base text-lightPurple border-[0.5px] border-lightPurple rounded p-2 px-4 
                     hover:bg-lightPurple hover:bg-opacity-20 ">
