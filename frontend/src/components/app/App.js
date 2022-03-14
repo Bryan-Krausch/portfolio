@@ -21,35 +21,35 @@ function App() {
 
   const [diapo, setDiapo] = useState(1)
 
-  function activateTranstion(){
-    console.log('test');
-    setTimeout(() => {
-      setStartTransition1('left-0')
-    }, 0)
+  // function activateTranstion(){
+  //   console.log('test');
+  //   setTimeout(() => {
+  //     setStartTransition1('left-0')
+  //   }, 0)
   
-    setTimeout(() => {
-      setStartTransition2('transition-[left] duration-300 left-0')
-    }, 300)
+  //   setTimeout(() => {
+  //     setStartTransition2('transition-[left] duration-300 left-0')
+  //   }, 300)
   
     
-    setTimeout(() => {
-      setStartTransition3('transition-[left] duration-300 left-0')
-    }, 600)
+  //   setTimeout(() => {
+  //     setStartTransition3('transition-[left] duration-300 left-0')
+  //   }, 600)
     
   
-    setTimeout(() => {
-      setTransition('transition-opacity duration-[0.2s] opacity-0')
-    }, 1300)
-    setTimeout(() => {
-      setTransition('transition-[display] duration-[0.1s] hidden')
-    }, 1500)
-    setTimeout(() => {
-      setStartTransition1('left-[-100vw]')
-      setStartTransition2('left-[-100vw]')
-      setStartTransition3('left-[-100vw]')
-      setTransition('opacity-1')
-    }, 1550)
-  }
+  //   setTimeout(() => {
+  //     setTransition('transition-opacity duration-[0.2s] opacity-0')
+  //   }, 1300)
+  //   setTimeout(() => {
+  //     setTransition('transition-[display] duration-[0.1s] hidden')
+  //   }, 1500)
+  //   setTimeout(() => {
+  //     setStartTransition1('left-[-100vw]')
+  //     setStartTransition2('left-[-100vw]')
+  //     setStartTransition3('left-[-100vw]')
+  //     setTransition('opacity-1')
+  //   }, 1550)
+  // }
   
   useEffect(() => {
     setTimeout(() => {
@@ -57,11 +57,11 @@ function App() {
     }, 1000)
   })
 
-  useEffect(() => {
-    if(isLoad){
-      activateTranstion()
-    }
-  }, [diapo])
+  // useEffect(() => {
+  //   if(isLoad){
+  //     activateTranstion()
+  //   }
+  // }, [diapo])
 
   useEffect(() => {
     if(isOpenMenuModal === true || isOpenContactModal === true){
