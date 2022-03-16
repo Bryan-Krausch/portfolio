@@ -20,48 +20,12 @@ function App() {
   const [startTransition3, setStartTransition3] = useState('left-[-100vw]')
 
   const [diapo, setDiapo] = useState(1)
-
-  // function activateTranstion(){
-  //   console.log('test');
-  //   setTimeout(() => {
-  //     setStartTransition1('left-0')
-  //   }, 0)
-  
-  //   setTimeout(() => {
-  //     setStartTransition2('transition-[left] duration-300 left-0')
-  //   }, 300)
-  
-    
-  //   setTimeout(() => {
-  //     setStartTransition3('transition-[left] duration-300 left-0')
-  //   }, 600)
-    
-  
-  //   setTimeout(() => {
-  //     setTransition('transition-opacity duration-[0.2s] opacity-0')
-  //   }, 1300)
-  //   setTimeout(() => {
-  //     setTransition('transition-[display] duration-[0.1s] hidden')
-  //   }, 1500)
-  //   setTimeout(() => {
-  //     setStartTransition1('left-[-100vw]')
-  //     setStartTransition2('left-[-100vw]')
-  //     setStartTransition3('left-[-100vw]')
-  //     setTransition('opacity-1')
-  //   }, 1550)
-  // }
   
   useEffect(() => {
     setTimeout(() => {
       setIsLoad(true)
     }, 1000)
   })
-
-  // useEffect(() => {
-  //   if(isLoad){
-  //     activateTranstion()
-  //   }
-  // }, [diapo])
 
   useEffect(() => {
     if(isOpenMenuModal === true || isOpenContactModal === true){
@@ -91,13 +55,13 @@ function App() {
 
 
         
-        <div className={`w-[93%] h-full mx-auto ${blur}`}>  
+        <div className={`w-[93%] h-full mx-auto ${blur} overflow-y-hidden`}>  
           <Header isOpenMenuModal={isOpenMenuModal} setIsOpenMenuModal={setIsOpenMenuModal} setDiapo={setDiapo} setIsOpenContactModal={setIsOpenContactModal}/>
 
           {/* Content */}
-          <main className={`h-screen w-screenn xl:px-[200px] lg:px-[100px] md:px-[80px] sm:px-[60px] px-4 w-full mx-auto ${(isOpenMenuModal || isOpenContactModal ) && "blur-sm lg:blur-none"}`}>
-            <div className={diapo === 1 ? 'block' : 'hidden'}><First /></div>
-            <div className={diapo === 2 ? 'block' : 'hidden'}><About /></div>
+          <main className={`h-screen w-screen overflow-y-hidden xl:px-[200px] lg:px-[100px] md:px-[80px] sm:px-[60px] px-4 w-full mx-auto ${(isOpenMenuModal || isOpenContactModal ) && "blur-sm lg:blur-none"}`}>
+            <div className={`transition-all ease-in-out duration-1000 block ${diapo === 1 ? 'opacity-100' : 'opacity-0 hidden'}`}><First /></div>
+            <div className={`transition-all ease-in-out duration-1000 block ${diapo === 2 ? 'opacity-100' : 'opacity-0 hidden'}`}><About /></div>
           </main>
 
           <Timeline diapo={diapo}/>
