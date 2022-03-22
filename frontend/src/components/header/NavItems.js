@@ -16,7 +16,7 @@ export default function NavItems({setDiapo}){
 
             <li className="px-3 flex items-baseline group cursor-pointer" onClick={() => {setDiapo(3)}}>
                 <FontAwesomeIcon icon={faCode} className='text-[12px] pr-1.5 text-lightPurple' />
-                <span className='group-hover:text-lightPurple font-mono'>Technologies</span>
+                <span className='group-hover:text-lightPurple font-mono'>Compétences</span>
             </li>
 
             <li className="px-3 flex items-baseline group cursor-pointer" onClick={() => {setDiapo(4)}}>

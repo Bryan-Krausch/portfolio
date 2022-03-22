@@ -1,10 +1,12 @@
 import About from '../about/About';
 import First from '../first/First'
+import Technologies from '../technologies/Technologies';
 import Header from '../header/Header';
 import ModalMenu from '../header/ModalMenu';
 import React, { useState, useEffect } from 'react';
 import ModalContact from '../contact/ModalContact';
 import Timeline from '../timeline/Timeline';
+import Projets from '../projets/Projets';
 
 
 function App() {
@@ -13,11 +15,6 @@ function App() {
 
   const [isOpenMenuModal, setIsOpenMenuModal] = useState(false)
   const [isOpenContactModal, setIsOpenContactModal] = useState(false)
-
-  const [transition, setTransition] = useState('opacity-1')
-  const [startTransition1, setStartTransition1] = useState('left-[-100vw]')
-  const [startTransition2, setStartTransition2] = useState('left-[-100vw]')
-  const [startTransition3, setStartTransition3] = useState('left-[-100vw]')
 
   const [diapo, setDiapo] = useState(1)
   
@@ -38,34 +35,32 @@ function App() {
   console.log(diapo);
 
   return (
-    <div className="App w-[full] overflow-x-hidden bg-darkPurple">
+    <div className="App w-screen h-screen overflow-x-hidden overflow-y-hidden bg-darkPurple antialiased">
       {isLoad ? 
       <div>
-        
-        {/* Transition
-        <div id='transition' className={`${transition}`}>
-          <div className={`bg-purple-800 transition-all ${startTransition1} ease-in-out duration-300`} style={styleTransition}></div>
-          <div className={`bg-darkPurple transition-all ${startTransition2} ease-in-out  duration-300`} style={styleTransition}></div>
-          <div className={`bg-black transition-all ${startTransition3} ease-in-out duration-300 opacity-50`} style={styleTransition}></div>
-        </div> */}
-
         {/* Modal Menu et Modal Contact */}
-        <ModalMenu isOpenMenuModal={isOpenMenuModal} setIsOpenMenuModal={setIsOpenMenuModal} />
-        {isOpenContactModal && <ModalContact setIsOpenContactModal={setIsOpenContactModal}/>}
+        <ModalMenu isOpenMenuModal={isOpenMenuModal} setIsOpenMenuModal={setIsOpenMenuModal} setDiapo={setDiapo} />
+        <ModalContact setIsOpenContactModal={setIsOpenContactModal} isOpenContactModal={isOpenContactModal}/>
 
 
         
-        <div className={`w-[93%] h-full mx-auto ${blur} overflow-y-hidden`}>  
+        <div className={`w-full h-screen ${blur} overflow-hidden ${isOpenContactModal ? "hidden" : 'flex-col'}`}>  
           <Header isOpenMenuModal={isOpenMenuModal} setIsOpenMenuModal={setIsOpenMenuModal} setDiapo={setDiapo} setIsOpenContactModal={setIsOpenContactModal}/>
 
           {/* Content */}
-          <main className={`h-screen w-screen overflow-y-hidden xl:px-[200px] lg:px-[100px] md:px-[80px] sm:px-[60px] px-4 w-full mx-auto ${(isOpenMenuModal || isOpenContactModal ) && "blur-sm lg:blur-none"}`}>
-            <div className={`transition-all ease-in-out duration-1000 block ${diapo === 1 ? 'opacity-100' : 'opacity-0 hidden'}`}><First /></div>
-            <div className={`transition-all ease-in-out duration-1000 block ${diapo === 2 ? 'opacity-100' : 'opacity-0 hidden'}`}><About /></div>
+          <main className={` h-screen w-full overflow-y-hidden overflow-x-hidden flex flex-col xl:px-[150px] lg:px-[150px] md:px-[50px] sm:px-[100px] px-[25px] mx-auto max-w-[1600px] xl:max-w-[2400px]
+          ${(isOpenMenuModal || isOpenContactModal ) && "blur-sm lg:blur-none"}`}>
+            
+            <div className={`${diapo !== 1 ? 'hidden' : 'block'} w-full max-w-[1000px] mx-auto mt-[100px]`}><First diapo={diapo}/></div>
+            <div className={`${diapo !== 2 ? 'hidden' : 'block'} h-full w-full max-w-[1100px] xl:max-w-[2400px] mx-auto overflow-y-scroll lg:overflow-hidden mt-[100px]`}><About diapo={diapo}/></div>
+            <div className={`${diapo !== 3 ? 'hidden' : "block"} h-full w-full max-w-[1100px] xl:max-w-[2400px] mx-auto overflow-y-scroll lg:overflow-hidden mt-[100px]`}><Technologies /></div>
+            <div className={`${diapo !== 4 ? 'hidden' : 'block'} h-full w-full max-w-[1100px] xl:max-w-[2400px] mx-auto overflow-y-scroll lg:overflow-hidden`}><Projets /></div>
           </main>
 
           <Timeline diapo={diapo}/>
+
         </div>
+
       </div>
 
       :
@@ -74,18 +69,12 @@ function App() {
           {/* Loading */}
         
       </div>
+
       }
     </div>
     );
 }
 
-const styleTransition = {
-  position: 'fixed',
-  height: '100vh',
-  width: '100vw',
-  top: '0',
-  zIndex: '1000'
-}
 
 
 export default App;

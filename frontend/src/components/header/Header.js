@@ -6,7 +6,7 @@ export default function Header({isOpenMenuModal, setIsOpenMenuModal, setDiapo, s
     const stateBars = isOpenMenuModal && "hidden"
 
     return(
-        <header className={`w-[93%] h-[70px] fixed top-0 flex items-center justify-between drop-shadow-2xl z-[10]`}>
+        <header className={`bg-darkPurple w-full h-[100px] fixed flex items-center justify-between drop-shadow-2xl z-[10] px-[25px] lg:px-[50px]`}>
                 <div id="headerTitle" className="text-white text-base md:text-lg lg:text-xl font-medium flex items-baseline xl:w-[10%] group">
                     <h1 className="tracking-wide lg:group-hover:text-2xl">Krausch</h1>
                     <div className="bg-lightPurple h-1.5 w-1.5 ml-1 lg:ml-0.5 rounded-full"></div>

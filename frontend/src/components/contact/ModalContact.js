@@ -2,10 +2,11 @@ import contactBackground from '../../img/contactBackground.jpg'
 import ContactFormItem from './ContactFormItem'
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faTwitter, faLinkedin, faGithub} from '@fortawesome/free-brands-svg-icons'
 
-export default function ModalContact({setIsOpenContactModal}){
+export default function ModalContact({setIsOpenContactModal, isOpenContactModal}){
     return(
-        <div className="absolute h-screen w-screen bg-white z-[999] flex overflow-y-hidden">
+        <div className={`absolute h-full w-full bg-white z-[999] flex ${isOpenContactModal ? "block" :"hidden"}`}>
             <div className="absolute top-4 right-8">
                 <button>
                     <FontAwesomeIcon icon={faXmark} className="text-black text-3xl relative cursor-pointer"  onClick={() => {setIsOpenContactModal(false)}} />
@@ -34,10 +35,15 @@ export default function ModalContact({setIsOpenContactModal}){
                         </div>
                     </div>
                 </div>
-                <div className='absolute bottom-20'>
+                <div className='absolute bottom-20 '>
                     <button className="border-[2px] border-ligthGreyText p-4 text-sm rounded">
                         Envoyez le formulaire
                     </button>
+                </div>
+                <div className='absolute right-0 bottom-0 flex flex-row-reverse items-center space-x-2 text-greyText pb-1'>
+                    <p className='px-2'>krausch.bryan@yahoo.com</p>
+                    <FontAwesomeIcon icon={faLinkedin} className="text-xl" />
+                    <FontAwesomeIcon icon={faGithub} className="text-xl" />
                 </div>
             </div>
 
