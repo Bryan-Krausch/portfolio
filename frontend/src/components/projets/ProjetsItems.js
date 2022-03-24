@@ -34,8 +34,12 @@ export default function ProjetsItems({projectState}){
                         <li>SpotifyAPI</li>
                     </ul>
                     <div className="mt-2 space-x-4 text-lg">
-                        <FontAwesomeIcon icon={faGithub} />
-                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                        <a className='cursor-pointer' href='https://github.com/Bryan-Krausch/Clone_spotify' target='_blank'>
+                            <FontAwesomeIcon icon={faGithub} />
+                        </a>
+                        <a className='cursor-pointer' href='https://clone-spotify-nine.vercel.app/login' target='_blank'>
+                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                        </a>
                     </div>
                 </div>
             </div>
