@@ -1,6 +1,6 @@
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import fabrice from '../../img/fabrice.jpg'
+import moi from '../../img/moi.jpg'
 
 export default function About({diapo}){
     return(
@@ -29,7 +29,7 @@ export default function About({diapo}){
                     <div className="w-[70%] lg:w-[30%] mx-auto pt-[30px] max-w-[300px]  relative pb-10">
                         <div className=' relative opacity-0 lg:before:absolute lg:before:top-[20px] lg:before:left-[20px] lg:before:border-[2px] lg:before:rounded lg:before:border-lightPurple lg:before:z-[1] lg:before:block lg:before:w-full lg:before:h-full animate-revealPrensentaionImage animation-delay-1000'> 
                             <div className="absolute top-0 left-0 bg-gradient-to-t from-black to-white w-full h-full z-[3] opacity-10"></div>
-                            <img className="w-full z-[2] rounded absolute left-2/4 transform -translate-x-2/4 lg:relative " src={fabrice} alt="moi" />
+                            <img className="w-full z-[2] rounded absolute left-2/4 transform -translate-x-2/4 lg:relative " src={moi} alt="moi" />
                         </div>
                     </div>
 
