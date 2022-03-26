@@ -54,7 +54,7 @@ function App() {
             <div className={`${diapo !== 1 ? 'hidden' : 'block'} w-full max-w-[1000px] mx-auto mt-[100px]`}><First diapo={diapo}/></div>
             <div className={`${diapo !== 2 ? 'hidden' : 'block'} h-full w-full max-w-[1100px] xl:max-w-[2400px] mx-auto overflow-y-scroll lg:overflow-hidden mt-[100px]`}><About diapo={diapo}/></div>
             <div className={`${diapo !== 3 ? 'hidden' : "block"} h-full w-full max-w-[1100px] xl:max-w-[2400px] mx-auto overflow-y-scroll lg:overflow-hidden mt-[100px]`}><Technologies /></div>
-            <div className={`${diapo !== 4 ? 'hidden' : 'block'} h-full w-full max-w-[1100px] xl:max-w-[2400px] mx-auto overflow-y-scroll lg:overflow-hidden`}><Projets /></div>
+            <div className={`${diapo !== 4 ? 'hidden' : 'block'} h-full w-full max-w-[1100px] xl:max-w-[2400px] mx-auto  overflow-y-hidden lg:overflow-hidden `}><Projets /></div>
           </main>
 
           <Timeline diapo={diapo}/>

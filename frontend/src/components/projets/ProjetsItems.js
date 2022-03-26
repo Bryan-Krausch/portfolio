@@ -12,7 +12,7 @@ export default function ProjetsItems({projectState}){
     <React.Fragment>
         <div className={`${projectState !== 1 ? "hidden" : 'block'} flex`}  id="1">
 
-            <div className="w-[70%] 2xl:h-full h-full relative group z-10 flex items-center">
+            <div className="lg:w-[70%] 2xl:h-full h-full relative group z-10 flex items-center">
                 <div className="relative group">
                     <div className={`w-full h-full bg-mediumPurple absolute top-0 l-0 opacity-40 group-hover:opacity-0 z-[50]`}></div>
                     <img src={spotifyProject} alt="spotify clone illustration" className="w-full h-full rounded z-[10]  object-cover block shadow"/>
