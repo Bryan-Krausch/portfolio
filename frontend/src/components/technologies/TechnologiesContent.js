@@ -31,7 +31,7 @@ export default function TechnologiesContent({selected}){
             </div>
             <div id="4" className={`${selected !== 4 && 'hidden'} pl-8`}>
                 <ol className="text-lightPurple text-lg 2xl:text-xl space-y-4 list-disc">
-                    <li><div className="text-white">GLPI</div></li>
+                    <li><div className="text-white">Visual Studio / Visual Studio Code</div></li>
                     <li><div className="text-white">Connaissance de base de réseaux</div></li>
                     <li><div className="text-white">Connaissance sur la réparation informatique</div></li>
                 </ol>

@@ -5,7 +5,8 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'tallMobile': {'raw': '(min-height: 700px) and (max-width: 480px)'}
+        'tallMobile': {'raw': '(min-height: 700px) and (max-width: 480px)'},
+        'tablet': {'raw': '(max-height: 1024px)'}
       },
       colors: {
         'darkPurple': '#0d0a2f',

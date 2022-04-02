@@ -1,7 +1,10 @@
 import './first.css'
+import pdf from "../../BryanKrausch_CV.pdf"
 
-export default function First({diapo}){
+export default function First({setDiapo, isOpenPdf, setIsOpenPDF}){
     return(
+        <div>
+        {!isOpenPdf ?
         <section className={`h-full w-full max-w-[1000px] mx-auto flex flex-col justify-center items-start min-h-screen tallMobile:pb-[10vh] xl:p-0 -mt-[110px]`}>
             <div className="w-full relative overflow-x-hidden overflow-y-hidden">
 
@@ -26,12 +29,19 @@ export default function First({diapo}){
                         Je suis un développeur spécialisé dans le <strong className="text-lightPurple">développement web</strong>. Je suis actuellement dans mes études pendant encore 2 ans je suis donc ouvert à <strong className="text-lightPurple">aucune</strong> offre d'emploi pour le moment.
                     </p>
                 </div>
-                <div className='mt-[50px] relative'>
-                    <a className='opacity-0 animate-revealText animation-delay-2000 px-[28px] py-[20px] border-lightPurple border-[1px] text-lightPurple bg-transparent inline-block' href='none'>Voir mon CV</a>
+                <div className='mt-[50px] relative cursor-pointer'>
+                    <a className='opacity-0 animate-revealText animation-delay-2000 px-[28px] py-[20px] border-lightPurple border-[1px] text-lightPurple bg-transparent inline-block' onClick={() => {setIsOpenPDF(true)}}>Voir mon CV</a>
                 </div>
 
             </div>
         </section>
+        :
+
+        <section className='h-full w-full max-w-[1000px] mx-auto flex flex-col justify-center items-start min-h-screen tallMobile:pb-[10vh] xl:p-0 -mt-[110px]'>
+            <iframe src={pdf} width="100%" height="600px" />
+        </section>
+        }
+        </div>
     )
 }
 

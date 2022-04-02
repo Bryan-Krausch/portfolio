@@ -10,7 +10,7 @@ export default function ProjetsItems({projectState}){
     console.log(projectState);
     return(
     <React.Fragment>
-        <div className={`${projectState !== 1 ? "hidden" : 'block'} flex`}  id="1">
+        <div className={`${projectState !== 3 ? "hidden" : 'block'} flex`}  id="1">
 
             <div className="lg:w-[70%] 2xl:h-full h-full relative group z-10 flex items-center">
                 <div className="relative group">
@@ -46,7 +46,7 @@ export default function ProjetsItems({projectState}){
 
         </div>
 
-        <div className={`${projectState !== 2 ? "hidden" : 'block'} flex`}  id="1">
+        <div className={`${projectState !== 1 ? "hidden" : 'block'} flex`}  id="1">
 
             <div className="w-[70%] 2xl:h-full h-full relative group z-10 flex items-center">
                 <div className="relative group">
@@ -77,7 +77,7 @@ export default function ProjetsItems({projectState}){
 
         </div>
 
-        <div className={`${projectState !== 3 ? "hidden" : 'block'} flex`}  id="1">
+        <div className={`${projectState !== 2 ? "hidden" : 'block'} flex`}  id="1">
 
             <div className="w-[70%] 2xl:h-full h-full relative group z-10 flex items-center">
                 <div className="relative group">
