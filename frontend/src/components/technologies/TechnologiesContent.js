@@ -6,7 +6,7 @@ export default function TechnologiesContent({selected}){
                     <li><div className="text-white">Javascript ES13</div></li>
                     <li><div className="text-white">HTML CSS</div></li>
                     <li><div className="text-white">PHP</div></li>
-                    <li><div className="text-white">SQL</div></li>
+                    <li><div className="text-white">MySQL, PostgreSQL</div></li>
                     <li><div className="text-white">SOLIDITY</div></li>
                     <li><div className="text-white">C#</div></li>
                 </ol>
@@ -18,6 +18,7 @@ export default function TechnologiesContent({selected}){
                     <li><div className="text-white">Framework PHP : Symfony</div></li>
                     <li><div className="text-white">Framework CSS : Bootstrap, Tailwind</div></li>
                     <li><div className="text-white">Responsive Design</div></li>
+                    <li><div className="text-white">API</div></li>
                     <li><div className="text-white">Ajax</div></li>
                 </ol>
             </div>

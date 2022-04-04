@@ -26,7 +26,7 @@ export default function First({setDiapo, isOpenPdf, setIsOpenPDF}){
                 <div className="lg:pt-0  font-thin tracking-wide w-full  mt-[20px]
                relative">
                     <p className='animate-revealDescriptionFirst opacity-0 animation-delay-2000 text-slate-500 text-[18px] text-left max-w-[600px]' style={style}>
-                        Je suis un développeur spécialisé dans le <strong className="text-lightPurple">développement web</strong>. Je suis actuellement dans mes études pendant encore 2 ans je suis donc ouvert à <strong className="text-lightPurple">aucune</strong> offre d'emploi pour le moment.
+                        Je suis un développeur spécialisé dans le <strong className="text-lightPurple">développement web</strong>. Je suis actuellement dans mes études, je suis en BTS SIO. Je souhaite par la suite faire une licence pro.
                     </p>
                 </div>
                 <div className='mt-[50px] relative cursor-pointer'>
